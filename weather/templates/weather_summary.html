@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Summary</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Daily Weather Summary</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Date</th>
+                <th>Avg Temperature (°C)</th>
+                <th>Max Temperature (°C)</th>
+                <th>Min Temperature (°C)</th>
+                <th>Dominant Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for summary in summaries %}
+            <tr>
+                <td>{{ summary.city }}</td>
+                <td>{{ summary.date }}</td>
+                <td>{{ summary.avg_temp }}</td>
+                <td>{{ summary.max_temp }}</td>
+                <td>{{ summary.min_temp }}</td>
+                <td>{{ summary.dominant_condition }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
